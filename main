@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BBL Moto</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #030505;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .top-logo {
+      background: #000;
+      text-align: center;
+      padding: 25px 15px 20px;
+      border-bottom: 1px solid #00eaff;
+    }
+
+    .top-logo img {
+      max-width: 520px;
+      width: 90%;
+      height: auto;
+    }
+
+    nav {
+      background: #050707;
+      border-bottom: 1px solid #00eaff;
+      display: flex;
+      justify-content: center;
+      gap: 35px;
+      padding: 16px;
+      flex-wrap: wrap;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: #ddd;
+    }
+
+    nav a:hover {
+      color: #00eaff;
+    }
+
+    .hero {
+      min-height: 520px;
+      background:
+        linear-gradient(to right, rgba(0,0,0,.95), rgba(0,0,0,.45), rgba(0,0,0,.95)),
+        radial-gradient(circle at center, rgba(0,234,255,.18), transparent 45%),
+        #080808;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px;
+      border-bottom: 1px solid #00eaff;
+    }
+
+    .hero-content {
+      max-width: 900px;
+    }
+
+    .hero h1 {
+      font-size: clamp(55px, 10vw, 150px);
+      color: #00eaff;
+      text-shadow: 0 0 25px rgba(0,234,255,.8);
+      font-style: italic;
+      letter-spacing: 6px;
+    }
+
+    .hero h2 {
+      font-size: clamp(22px, 4vw, 44px);
+      letter-spacing: 8px;
+      margin-top: 10px;
+    }
+
+    .hero p {
+      margin: 25px auto;
+      max-width: 650px;
+      font-size: 20px;
+      line-height: 1.5;
+      color: #ddd;
+    }
+
+    .button {
+      display: inline-block;
+      border: 2px solid #00eaff;
+      color: #00eaff;
+      padding: 14px 34px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-top: 10px;
+      transition: .2s;
+    }
+
+    .button:hover {
+      background: #00eaff;
+      color: black;
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      padding: 30px;
+      max-width: 1400px;
+      margin: auto;
+    }
+
+    .card {
+      background: linear-gradient(180deg, #0b0f10, #050707);
+      border: 1px solid #008899;
+      padding: 25px;
+      min-height: 280px;
+      box-shadow: 0 0 25px rgba(0,234,255,.08);
+    }
+
+    .card h3 {
+      color: #00eaff;
+      font-size: 26px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      font-style: italic;
+    }
+
+    .event {
+      border-bottom: 1px solid #222;
+      padding: 12px 0;
+    }
+
+    .event strong {
+      display: block;
+      font-size: 20px;
+    }
+
+    .event span {
+      color: #00eaff;
+      font-size: 14px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    td, th {
+      padding: 11px;
+      border-bottom: 1px solid #222;
+      text-align: left;
+    }
+
+    th {
+      color: #aaa;
+      font-size: 13px;
+    }
+
+    td:first-child {
+      color: #00eaff;
+      font-weight: bold;
+    }
+
+    .social-link {
+      display: block;
+      border: 1px solid #444;
+      margin-bottom: 12px;
+      padding: 14px;
+      font-weight: bold;
+    }
+
+    .social-link:hover {
+      border-color: #00eaff;
+      color: #00eaff;
+    }
+
+    .features {
+      max-width: 1400px;
+      margin: 0 auto 35px;
+      padding: 0 30px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .feature {
+      border: 1px solid #008899;
+      padding: 22px;
+      background: #070909;
+    }
+
+    .feature h4 {
+      color: #00eaff;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      border-top: 1px solid #00eaff;
+      color: #777;
+      letter-spacing: 2px;
+    }
+
+    @media (max-width: 900px) {
+      .section-grid,
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        gap: 18px;
+        font-size: 14px;
+      }
+
+      .hero {
+        min-height: 430px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="top-logo">
+    <!-- Upload your logo to GitHub and name it logo.jpg -->
+    <img src="logo.jpg" alt="BBL Moto Logo">
+  </div>
+
+  <nav>
+    <a href="#">HOME</a>
+    <a href="#">SCHEDULE</a>
+    <a href="#">STANDINGS</a>
+    <a href="#">RIDERS</a>
+    <a href="#">MEDIA</a>
+    <a href="#">RULES</a>
+    <a href="#">ABOUT</a>
+    <a href="#">CONTACT</a>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>BBL MOTO</h1>
+      <h2>COMPETE. IMPROVE. DOMINATE.</h2>
+      <p>
+        BBL Moto is a competitive MX vs ATV racing league built for racers,
+        creators, teams, and the community.
+      </p>
+      <a class="button" href="#">JOIN THE BBL</a>
+    </div>
+  </section>
+
+  <section class="section-grid">
+
+    <div class="card">
+      <h3>Upcoming Event</h3>
+
+      <div class="event">
+        <strong>Round 1 — Anaheim</strong>
+        <span>250 Pro / 450 Pro</span>
+      </div>
+
+      <div class="event">
+        <strong>Round 2 — Foxborough</strong>
+        <span>250 Pro / 450 Pro</span>
+      </div>
+
+      <div class="event">
+        <strong>Round 3 — Denver</strong>
+        <span>250 Pro / 450 Pro</span>
+      </div>
+
+      <br>
+      <a class="button" href="#">View Schedule</a>
+    </div>
+
+    <div class="card">
+      <h3>Series Standings</h3>
+
+      <table>
+        <tr>
+          <th>POS</th>
+          <th>RIDER</th>
+          <th>PTS</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>BBL Rider</td>
+          <td>225</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>BBL Rider</td>
+          <td>216</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>BBL Rider</td>
+          <td>195</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>BBL Rider</td>
+          <td>183</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>BBL Rider</td>
+          <td>168</td>
+        </tr>
+      </table>
+
+      <br>
+      <a class="button" href="#">View Standings</a>
+    </div>
+
+    <div class="card">
+      <h3>Stay Connected</h3>
+
+      <a class="social-link" href="#">Discord</a>
+      <a class="social-link" href="#">YouTube</a>
+      <a class="social-link" href="#">TikTok</a>
+      <a class="social-link" href="#">Twitch</a>
+
+      <br>
+      <h3>#BuiltToDominate</h3>
+    </div>
+
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <h4>Competitive League</h4>
+      <p>Weekly races, fair rules, and real competition.</p>
+    </div>
+
+    <div class="feature">
+      <h4>Active Community</h4>
+      <p>Built around racers, teams, and content creators.</p>
+    </div>
+
+    <div class="feature">
+      <h4>Live Results</h4>
+      <p>Updated points, schedules, and event results.</p>
+    </div>
+
+    <div class="feature">
+      <h4>Fair & Organized</h4>
+      <p>Clean formats, clear rules, and serious racing.</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 BBL MOTO. ALL RIGHTS RESERVED.
+  </footer>
+
+</body>
+</html>
