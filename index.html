@@ -26,12 +26,12 @@
     .top-logo {
       background: #000;
       text-align: center;
-      padding: 25px 15px 20px;
-      border-bottom: 1px solid #00eaff;
+      padding: 18px 15px;
+      border-bottom: 2px solid #00eaff;
     }
 
     .top-logo img {
-      max-width: 520px;
+      max-width: 500px;
       width: 90%;
       height: auto;
     }
@@ -48,52 +48,48 @@
       letter-spacing: 1px;
     }
 
-    nav a {
-      color: #ddd;
-    }
-
     nav a:hover {
       color: #00eaff;
     }
 
     .hero {
-      min-height: 520px;
+      min-height: 620px;
       background:
-        linear-gradient(to right, rgba(0,0,0,.95), rgba(0,0,0,.45), rgba(0,0,0,.95)),
-        radial-gradient(circle at center, rgba(0,234,255,.18), transparent 45%),
-        #080808;
+        linear-gradient(to right, rgba(0,0,0,.92), rgba(0,0,0,.55), rgba(0,0,0,.85)),
+        url("background.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       display: flex;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 60px 20px;
+      padding: 70px 8%;
       border-bottom: 1px solid #00eaff;
     }
 
     .hero-content {
-      max-width: 900px;
+      max-width: 720px;
     }
 
     .hero h1 {
-      font-size: clamp(55px, 10vw, 150px);
+      font-size: clamp(55px, 10vw, 130px);
       color: #00eaff;
-      text-shadow: 0 0 25px rgba(0,234,255,.8);
+      text-shadow: 0 0 25px rgba(0,234,255,.9);
       font-style: italic;
-      letter-spacing: 6px;
+      letter-spacing: 5px;
     }
 
     .hero h2 {
-      font-size: clamp(22px, 4vw, 44px);
-      letter-spacing: 8px;
-      margin-top: 10px;
+      font-size: clamp(24px, 4vw, 44px);
+      letter-spacing: 7px;
+      margin: 10px 0 25px;
     }
 
     .hero p {
-      margin: 25px auto;
-      max-width: 650px;
-      font-size: 20px;
+      font-size: 21px;
       line-height: 1.5;
-      color: #ddd;
+      color: #eeeeee;
+      max-width: 620px;
+      margin-bottom: 25px;
     }
 
     .button {
@@ -103,7 +99,6 @@
       padding: 14px 34px;
       font-weight: bold;
       letter-spacing: 1px;
-      margin-top: 10px;
       transition: .2s;
     }
 
@@ -122,7 +117,7 @@
     }
 
     .card {
-      background: linear-gradient(180deg, #0b0f10, #050707);
+      background: linear-gradient(180deg, rgba(11,15,16,.95), rgba(5,7,7,.95));
       border: 1px solid #008899;
       padding: 25px;
       min-height: 280px;
@@ -216,18 +211,21 @@
     }
 
     @media (max-width: 900px) {
-      .section-grid,
-      .features {
-        grid-template-columns: 1fr;
-      }
-
       nav {
         gap: 18px;
         font-size: 14px;
       }
 
       .hero {
-        min-height: 430px;
+        text-align: center;
+        justify-content: center;
+        padding: 60px 20px;
+        background-position: center;
+      }
+
+      .section-grid,
+      .features {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -236,7 +234,6 @@
 <body>
 
   <div class="top-logo">
-    <!-- Upload your logo to GitHub and name it logo.jpg -->
     <img src="logo.jpg" alt="BBL Moto Logo">
   </div>
 
@@ -330,10 +327,10 @@
     <div class="card">
       <h3>Stay Connected</h3>
 
-      <a class="social-link" href="#">Discord</a>
-      <a class="social-link" href="#">YouTube</a>
-      <a class="social-link" href="#">TikTok</a>
-      <a class="social-link" href="#">Twitch</a>
+      <a class="social-link" href="#">Join Our Discord</a>
+      <a class="social-link" href="#">Watch On YouTube</a>
+      <a class="social-link" href="#">Follow On TikTok</a>
+      <a class="social-link" href="#">Watch On Twitch</a>
 
       <br>
       <h3>#BuiltToDominate</h3>
