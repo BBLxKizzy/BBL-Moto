@@ -6,272 +6,60 @@
 <title>BBL Moto</title>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box}
 
-body{
-background:#050505;
-font-family:Arial, Helvetica, sans-serif;
-color:white;
-}
+body{background:#050505;font-family:Arial,Helvetica,sans-serif;color:white}
 
-.top-logo{
-background:black;
-padding:20px;
-text-align:center;
-border-bottom:2px solid #00eaff;
-}
+.top-logo{background:black;padding:20px;text-align:center;border-bottom:2px solid #00eaff}
+.top-logo img{max-width:500px;width:90%}
 
-.top-logo img{
-max-width:500px;
-width:90%;
-}
+nav{display:flex;justify-content:center;align-items:center;gap:28px;padding:18px;background:#070707;border-bottom:1px solid #00eaff;flex-wrap:wrap;font-weight:bold;position:relative;z-index:50}
+nav a,.dropbtn{color:white;text-decoration:none;background:none;border:none;font-size:16px;font-weight:bold;font-family:Arial,Helvetica,sans-serif;cursor:pointer}
+nav a:hover,.dropbtn:hover{color:#00eaff}
 
-nav{
-display:flex;
-justify-content:center;
-align-items:center;
-gap:28px;
-padding:18px;
-background:#070707;
-border-bottom:1px solid #00eaff;
-flex-wrap:wrap;
-font-weight:bold;
-position:relative;
-z-index:50;
-}
+.dropdown{position:relative;display:inline-block}
+.dropdown-content{display:none;position:absolute;top:28px;left:0;background:#0a0a0a;min-width:230px;border:1px solid #00eaff;box-shadow:0 0 20px rgba(0,234,255,.25);z-index:999}
+.dropdown-content a{display:block;padding:14px 16px;border-bottom:1px solid #222;white-space:nowrap}
+.dropdown-content a:hover{background:#00eaff;color:black}
+.dropdown:hover .dropdown-content{display:block}
 
-nav a,
-.dropbtn{
-color:white;
-text-decoration:none;
-background:none;
-border:none;
-font-size:16px;
-font-weight:bold;
-font-family:Arial, Helvetica, sans-serif;
-cursor:pointer;
-}
+.hero{min-height:650px;background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),url('background.jpg');background-size:cover;background-position:center;background-repeat:no-repeat;display:flex;align-items:center;padding:80px;border-bottom:1px solid #00eaff}
+.hero-content{max-width:700px}
+.hero h1{font-size:120px;color:#00eaff;font-style:italic;text-shadow:0 0 25px rgba(0,234,255,.8)}
+.hero h2{font-size:42px;letter-spacing:5px;margin-bottom:20px}
+.hero p{font-size:22px;line-height:1.5;margin-bottom:30px}
 
-nav a:hover,
-.dropbtn:hover{
-color:#00eaff;
-}
+.button{display:inline-block;padding:15px 35px;border:2px solid #00eaff;color:#00eaff;text-decoration:none;font-weight:bold;transition:.2s}
+.button:hover{background:#00eaff;color:black}
 
-.dropdown{
-position:relative;
-display:inline-block;
-}
+.section-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:30px;max-width:1400px;margin:auto}
+.card{background:#0a0a0a;border:1px solid #008899;padding:25px}
+.card h3{color:#00eaff;margin-bottom:20px;font-size:28px}
 
-.dropdown-content{
-display:none;
-position:absolute;
-top:28px;
-left:0;
-background:#0a0a0a;
-min-width:230px;
-border:1px solid #00eaff;
-box-shadow:0 0 20px rgba(0,234,255,.25);
-z-index:999;
-}
+.event{padding:12px 0;border-bottom:1px solid #222}
+.event strong{display:block;font-size:20px}
+.event span{color:#00eaff;font-size:14px}
 
-.dropdown-content a{
-display:block;
-padding:14px 16px;
-border-bottom:1px solid #222;
-white-space:nowrap;
-}
+table{width:100%;border-collapse:collapse}
+th,td{padding:12px;border-bottom:1px solid #222;text-align:left}
+td:first-child{color:#00eaff;font-weight:bold}
 
-.dropdown-content a:hover{
-background:#00eaff;
-color:black;
-}
+.social-link{display:block;padding:14px;border:1px solid #333;margin-bottom:12px;text-decoration:none;color:white}
+.social-link:hover{border-color:#00eaff;color:#00eaff}
 
-.dropdown:hover .dropdown-content{
-display:block;
-}
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;padding:0 30px 40px;max-width:1400px;margin:auto}
+.feature{border:1px solid #008899;padding:20px;background:#080808}
+.feature h4{color:#00eaff;margin-bottom:10px}
 
-.hero{
-min-height:650px;
-
-background:
-linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),
-url('background.jpg');
-
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
-
-display:flex;
-align-items:center;
-padding:80px;
-border-bottom:1px solid #00eaff;
-}
-
-.hero-content{
-max-width:700px;
-}
-
-.hero h1{
-font-size:120px;
-color:#00eaff;
-font-style:italic;
-text-shadow:0 0 25px rgba(0,234,255,.8);
-}
-
-.hero h2{
-font-size:42px;
-letter-spacing:5px;
-margin-bottom:20px;
-}
-
-.hero p{
-font-size:22px;
-line-height:1.5;
-margin-bottom:30px;
-}
-
-.button{
-display:inline-block;
-padding:15px 35px;
-border:2px solid #00eaff;
-color:#00eaff;
-text-decoration:none;
-font-weight:bold;
-transition:.2s;
-}
-
-.button:hover{
-background:#00eaff;
-color:black;
-}
-
-.section-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-padding:30px;
-max-width:1400px;
-margin:auto;
-}
-
-.card{
-background:#0a0a0a;
-border:1px solid #008899;
-padding:25px;
-}
-
-.card h3{
-color:#00eaff;
-margin-bottom:20px;
-font-size:28px;
-}
-
-.event{
-padding:12px 0;
-border-bottom:1px solid #222;
-}
-
-.event strong{
-display:block;
-font-size:20px;
-}
-
-.event span{
-color:#00eaff;
-font-size:14px;
-}
-
-table{
-width:100%;
-border-collapse:collapse;
-}
-
-th,td{
-padding:12px;
-border-bottom:1px solid #222;
-text-align:left;
-}
-
-td:first-child{
-color:#00eaff;
-font-weight:bold;
-}
-
-.social-link{
-display:block;
-padding:14px;
-border:1px solid #333;
-margin-bottom:12px;
-text-decoration:none;
-color:white;
-}
-
-.social-link:hover{
-border-color:#00eaff;
-color:#00eaff;
-}
-
-.features{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:15px;
-padding:0 30px 40px;
-max-width:1400px;
-margin:auto;
-}
-
-.feature{
-border:1px solid #008899;
-padding:20px;
-background:#080808;
-}
-
-.feature h4{
-color:#00eaff;
-margin-bottom:10px;
-}
-
-footer{
-padding:25px;
-text-align:center;
-border-top:1px solid #00eaff;
-color:#777;
-}
+footer{padding:25px;text-align:center;border-top:1px solid #00eaff;color:#777}
 
 @media(max-width:900px){
-
-nav{
-gap:18px;
-}
-
-.dropdown-content{
-position:static;
-margin-top:10px;
-}
-
-.hero{
-padding:50px 20px;
-text-align:center;
-justify-content:center;
-}
-
-.hero h1{
-font-size:70px;
-}
-
-.hero h2{
-font-size:28px;
-}
-
-.section-grid,
-.features{
-grid-template-columns:1fr;
-}
-
+nav{gap:18px}
+.dropdown-content{position:static;margin-top:10px}
+.hero{padding:50px 20px;text-align:center;justify-content:center}
+.hero h1{font-size:70px}
+.hero h2{font-size:28px}
+.section-grid,.features{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -283,7 +71,6 @@ grid-template-columns:1fr;
 </div>
 
 <nav>
-
 <a href="#">HOME</a>
 
 <div class="dropdown">
@@ -322,32 +109,20 @@ grid-template-columns:1fr;
 <a href="#">RULES</a>
 <a href="#">ABOUT</a>
 <a href="#">CONTACT</a>
-
 </nav>
 
 <section class="hero">
-
 <div class="hero-content">
-
 <h1>BBL MOTO</h1>
-
 <h2>COMPETE. IMPROVE. DOMINATE.</h2>
-
-<p>
-BBL Moto is a competitive MX vs ATV racing league built for racers,
-creators, teams, and the community.
-</p>
-
+<p>BBL Moto is a competitive MX vs ATV racing league built for racers, creators, teams, and the community.</p>
 <a class="button" href="#">JOIN THE BBL</a>
-
 </div>
-
 </section>
 
 <section class="section-grid">
 
 <div class="card">
-
 <h3>Upcoming Events</h3>
 
 <div class="event">
@@ -359,15 +134,12 @@ creators, teams, and the community.
 <strong>Two Smoke Showdown</strong>
 <span>Xbox • May 14th • 8PM CST</span>
 </div>
-
 </div>
 
 <div class="card">
-
 <h3>Series Standings</h3>
 
 <table>
-
 <tr>
 <th>POS</th>
 <th>RIDER</th>
@@ -376,53 +148,47 @@ creators, teams, and the community.
 
 <tr>
 <td>1</td>
-<td>BBL Rider</td>
-<td>225</td>
+<td>Dickless Shitters</td>
+<td>122</td>
 </tr>
 
 <tr>
 <td>2</td>
-<td>BBL Rider</td>
-<td>216</td>
+<td>450MOB</td>
+<td>111</td>
 </tr>
 
 <tr>
 <td>3</td>
-<td>BBL Rider</td>
-<td>195</td>
+<td>Birtdykes</td>
+<td>96</td>
 </tr>
 
 <tr>
 <td>4</td>
-<td>BBL Rider</td>
-<td>183</td>
+<td>RXR</td>
+<td>82</td>
 </tr>
 
 <tr>
 <td>5</td>
-<td>BBL Rider</td>
-<td>168</td>
+<td>Broy</td>
+<td>71</td>
 </tr>
-
 </table>
-
 </div>
 
 <div class="card">
-
 <h3>Stay Connected</h3>
-
 <a class="social-link" href="#">Discord</a>
 <a class="social-link" href="#">YouTube</a>
 <a class="social-link" href="#">TikTok</a>
 <a class="social-link" href="#">Twitch</a>
-
 </div>
 
 </section>
 
 <section class="features">
-
 <div class="feature">
 <h4>PlayStation Series</h4>
 <p>Separate schedules, signups, standings, and rider lists.</p>
@@ -442,7 +208,6 @@ creators, teams, and the community.
 <h4>Fair & Organized</h4>
 <p>Clean formats and serious racing.</p>
 </div>
-
 </section>
 
 <footer>
