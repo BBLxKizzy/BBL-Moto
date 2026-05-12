@@ -1,275 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
 <title>BBL Moto</title>
 
 <style>
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-background:#050505;
-font-family:Arial,Helvetica,sans-serif;
-color:white;
+    background:#111;
+    color:white;
+    min-height:100vh;
+    background-image:
+    linear-gradient(rgba(0,0,0,.82), rgba(0,0,0,.82)),
+    url('https://images.unsplash.com/photo-1517846693594-1567da72af75?q=80&w=1974&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    padding:40px 20px;
 }
 
-.top-logo{
-background:black;
-padding:20px;
-text-align:center;
-border-bottom:2px solid #00eaff;
+.container{
+    max-width:1400px;
+    margin:auto;
 }
 
-.top-logo img{
-max-width:500px;
-width:90%;
+.top-bar{
+    border-top:3px solid #00f5ff;
+    margin-bottom:40px;
 }
 
-nav{
-display:flex;
-justify-content:center;
-align-items:center;
-gap:28px;
-padding:18px;
-background:#070707;
-border-bottom:1px solid #00eaff;
-flex-wrap:wrap;
-font-weight:bold;
-position:relative;
-z-index:50;
+.logo-section{
+    text-align:center;
+    margin-bottom:40px;
 }
 
-nav a,
-.dropbtn{
-color:white;
-text-decoration:none;
-background:none;
-border:none;
-font-size:16px;
-font-weight:bold;
-font-family:Arial,Helvetica,sans-serif;
-cursor:pointer;
+.logo{
+    width:180px;
+    margin-bottom:15px;
 }
 
-nav a:hover,
-.dropbtn:hover{
-color:#00eaff;
+.title{
+    font-size:4rem;
+    font-weight:900;
+    color:#00f5ff;
+    text-shadow:0 0 15px #00f5ff;
 }
 
-.dropdown{
-position:relative;
-display:inline-block;
+.subtitle{
+    color:#ccc;
+    margin-top:10px;
+    font-size:1.1rem;
 }
 
-.dropdown-content{
-display:none;
-position:absolute;
-top:28px;
-left:0;
-background:#0a0a0a;
-min-width:230px;
-border:1px solid #00eaff;
-box-shadow:0 0 20px rgba(0,234,255,.25);
-z-index:999;
-}
-
-.dropdown-content a{
-display:block;
-padding:14px 16px;
-border-bottom:1px solid #222;
-white-space:nowrap;
-}
-
-.dropdown-content a:hover{
-background:#00eaff;
-color:black;
-}
-
-.dropdown:hover .dropdown-content{
-display:block;
-}
-
-.hero{
-min-height:650px;
-
-background:
-linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),
-url('background.jpg');
-
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
-
-display:flex;
-align-items:center;
-padding:80px;
-border-bottom:1px solid #00eaff;
-}
-
-.hero-content{
-max-width:700px;
-}
-
-.hero h1{
-font-size:120px;
-color:#00eaff;
-font-style:italic;
-text-shadow:0 0 25px rgba(0,234,255,.8);
-}
-
-.hero h2{
-font-size:42px;
-letter-spacing:5px;
-margin-bottom:20px;
-}
-
-.hero p{
-font-size:22px;
-line-height:1.5;
-margin-bottom:30px;
-}
-
-.button{
-display:inline-block;
-padding:15px 35px;
-border:2px solid #00eaff;
-color:#00eaff;
-text-decoration:none;
-font-weight:bold;
-transition:.2s;
-}
-
-.button:hover{
-background:#00eaff;
-color:black;
-}
-
-.section-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-padding:30px;
-max-width:1400px;
-margin:auto;
+.main-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
 }
 
 .card{
-background:#0a0a0a;
-border:1px solid #008899;
-padding:25px;
+    border:2px solid #00f5ff;
+    background:rgba(0,0,0,.55);
+    padding:35px;
+    backdrop-filter:blur(4px);
 }
 
-.card h3{
-color:#00eaff;
-margin-bottom:20px;
-font-size:28px;
+.card h2{
+    color:#00f5ff;
+    font-size:3rem;
+    margin-bottom:30px;
+    text-shadow:0 0 10px #00f5ff;
 }
 
-.event{
-padding:12px 0;
-border-bottom:1px solid #222;
+.points-table{
+    width:100%;
+    border-collapse:collapse;
 }
 
-.event strong{
-display:block;
-font-size:20px;
+.points-table th{
+    color:#00f5ff;
+    text-align:left;
+    padding-bottom:15px;
+    font-size:1.3rem;
+    border-bottom:2px solid rgba(255,255,255,.15);
 }
 
-.event span{
-color:#00eaff;
-font-size:14px;
+.points-table td{
+    padding:16px 0;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    font-size:1.2rem;
 }
 
-table{
-width:100%;
-border-collapse:collapse;
+.social-box{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
 }
 
-th,td{
-padding:12px;
-border-bottom:1px solid #222;
-text-align:left;
+.social-btn{
+    display:block;
+    width:100%;
+    padding:18px 24px;
+    background:rgba(255,255,255,0.05);
+    border:2px solid rgba(255,255,255,0.6);
+    color:white;
+    text-decoration:none;
+    font-size:1.4rem;
+    font-weight:700;
+    transition:0.2s ease;
 }
 
-td:first-child{
-color:#00eaff;
-font-weight:bold;
+.social-btn:hover{
+    border-color:#00f5ff;
+    box-shadow:0 0 12px #00f5ff;
+    transform:translateY(-2px);
 }
 
-.social-link{
-display:block;
-padding:14px;
-border:1px solid #333;
-margin-bottom:12px;
-text-decoration:none;
-color:white;
+.bottom-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+    margin-top:30px;
 }
 
-.social-link:hover{
-border-color:#00eaff;
-color:#00eaff;
+.info-card{
+    border:2px solid #00f5ff;
+    background:rgba(0,0,0,.55);
+    padding:30px;
 }
 
-.features{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:15px;
-padding:0 30px 40px;
-max-width:1400px;
-margin:auto;
+.info-card h3{
+    color:#00f5ff;
+    font-size:2rem;
+    margin-bottom:15px;
 }
 
-.feature{
-border:1px solid #008899;
-padding:20px;
-background:#080808;
-}
-
-.feature h4{
-color:#00eaff;
-margin-bottom:10px;
-}
-
-footer{
-padding:25px;
-text-align:center;
-border-top:1px solid #00eaff;
-color:#777;
+.info-card p{
+    color:#ddd;
+    font-size:1.1rem;
+    line-height:1.6;
 }
 
 @media(max-width:900px){
 
-nav{
-gap:18px;
+.main-grid{
+    grid-template-columns:1fr;
 }
 
-.dropdown-content{
-position:static;
-margin-top:10px;
+.bottom-grid{
+    grid-template-columns:1fr;
 }
 
-.hero{
-padding:50px 20px;
-text-align:center;
-justify-content:center;
+.title{
+    font-size:2.7rem;
 }
 
-.hero h1{
-font-size:70px;
-}
-
-.hero h2{
-font-size:28px;
-}
-
-.section-grid,
-.features{
-grid-template-columns:1fr;
+.card h2{
+    font-size:2.2rem;
 }
 
 }
@@ -278,138 +172,59 @@ grid-template-columns:1fr;
 
 <body>
 
-<div class="top-logo">
-<img src="logo.JPG" alt="BBL Moto Logo">
-</div>
+<div class="container">
 
-<nav>
+<div class="top-bar"></div>
 
-<a href="#">HOME</a>
+<div class="logo-section">
 
-<div class="dropdown">
-<button class="dropbtn">SCHEDULE</button>
-<div class="dropdown-content">
-<a href="#">PlayStation Schedule</a>
-<a href="#">Xbox Schedule</a>
-</div>
-</div>
+<!-- PUT YOUR LOGO IMAGE HERE -->
+<!-- Example:
+<img src="yourlogo.png" class="logo">
+-->
 
-<div class="dropdown">
-<button class="dropbtn">SIGNUPS</button>
-<div class="dropdown-content">
-<a href="#">PlayStation Signups</a>
-<a href="#">Xbox Signups</a>
-</div>
-</div>
+<h1 class="title">BBL MOTO</h1>
 
-<div class="dropdown">
-<button class="dropbtn">STANDINGS</button>
-<div class="dropdown-content">
-<a href="#">PlayStation Standings</a>
-<a href="#">Xbox Standings</a>
-</div>
-</div>
-
-<div class="dropdown">
-<button class="dropbtn">RIDERS</button>
-<div class="dropdown-content">
-<a href="#">PlayStation Riders</a>
-<a href="#">Xbox Riders</a>
-</div>
-</div>
-
-<div class="dropdown">
-<button class="dropbtn">STAFF</button>
-<div class="dropdown-content">
-<a href="#">BBLxKizzy</a>
-<a href="#">BBL Mami</a>
-<a href="#">BBL Buck</a>
-<a href="#">BBL Ziggy</a>
-</div>
-</div>
-
-<a href="#">MEDIA</a>
-<a href="#">RULES</a>
-<a href="#">ABOUT</a>
-<a href="#">CONTACT</a>
-
-</nav>
-
-<section class="hero">
-
-<div class="hero-content">
-
-<h1>BBL MOTO</h1>
-
-<h2>COMPETE. IMPROVE. DOMINATE.</h2>
-
-<p>
-BBL Moto is a competitive MX vs ATV racing league built for racers,
-creators, teams, and the community.
+<p class="subtitle">
+Competitive MX vs ATV Legends Racing
 </p>
 
-<a class="button" href="#">JOIN THE BBL</a>
-
 </div>
 
-</section>
-
-<section class="section-grid">
+<div class="main-grid">
 
 <div class="card">
 
-<h3>Upcoming Events</h3>
+<h2>Points Leaders</h2>
 
-<div class="event">
-<strong>Elimination Gauntlet</strong>
-<span>Xbox • May 12th • 7PM CST</span>
-</div>
-
-<div class="event">
-<strong>Two Smoke Showdown</strong>
-<span>Xbox • May 14th • 8PM CST</span>
-</div>
-
-</div>
-
-<div class="card">
-
-<h3>Series Standings</h3>
-
-<table>
+<table class="points-table">
 
 <tr>
-<th>POS</th>
-<th>RIDER</th>
+<th>Team</th>
 <th>PTS</th>
 </tr>
 
 <tr>
-<td>1</td>
 <td>Dickless Shitters</td>
 <td>122</td>
 </tr>
 
 <tr>
-<td>2</td>
 <td>450MOB</td>
 <td>111</td>
 </tr>
 
 <tr>
-<td>3</td>
 <td>Birtdykes</td>
 <td>96</td>
 </tr>
 
 <tr>
-<td>4</td>
 <td>RXR</td>
 <td>82</td>
 </tr>
 
 <tr>
-<td>5</td>
 <td>Broy</td>
 <td>71</td>
 </tr>
@@ -420,81 +235,61 @@ creators, teams, and the community.
 
 <div class="card">
 
-<h3>Stay Connected</h3>
+<h2>Stay Connected</h2>
 
-<a class="social-link" href="#">
+<div class="social-box">
+
+<a href="https://discord.gg/YOURDISCORD"
+class="social-btn">
 Discord
 </a>
 
-<a class="social-link" href="https://instagram.com/bblxkizzy">
+<a href="https://instagram.com/bblxkizzy"
+class="social-btn">
 Instagram
 </a>
 
-<div class="dropdown">
-
-<button class="dropbtn">
-TikTok ▼
-</button>
-
-<div class="dropdown-content">
-
-<a href="https://www.tiktok.com/@bblxkizzy">
-BBLxKizzy
+<a href="https://tiktok.com/@bblxkizzy"
+class="social-btn">
+TikTok
 </a>
 
-<a href="#">
-BBL Mami
-</a>
-
-<a href="#">
-BBL Buck
-</a>
-
-<a href="#">
-BBL Ziggy
-</a>
-
-</div>
-
-</div>
-
-<br>
-
-<a class="social-link" href="https://twitch.tv/bblxkizzy">
+<a href="https://twitch.tv/bblxkizzy"
+class="social-btn">
 Twitch
 </a>
 
 </div>
 
-</section>
-
-<section class="features">
-
-<div class="feature">
-<h4>PlayStation Series</h4>
-<p>Separate schedules, signups, standings, and rider lists.</p>
 </div>
 
-<div class="feature">
-<h4>Xbox Series</h4>
-<p>Separate schedules, signups, standings, and rider lists.</p>
 </div>
 
-<div class="feature">
-<h4>Live Results</h4>
-<p>Updated schedules and standings.</p>
+<div class="bottom-grid">
+
+<div class="info-card">
+
+<h3>Live Results</h3>
+
+<p>
+Updated schedules, standings, race results, and championship points all season long.
+</p>
+
 </div>
 
-<div class="feature">
-<h4>Fair & Organized</h4>
-<p>Clean formats and serious racing.</p>
+<div class="info-card">
+
+<h3>Fair & Organized</h3>
+
+<p>
+Clean formats and serious racing built for competitive riders.
+</p>
+
 </div>
 
-</section>
+</div>
 
-<footer>
-© 2026 BBL MOTO. ALL RIGHTS RESERVED.
-</footer>
+</div>
 
 </body>
 </html>
